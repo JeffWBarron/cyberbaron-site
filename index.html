@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Barron Software Services — Practical AI for Working Businesses</title>
+<meta name="description" content="AI implementation consulting for owner-operated businesses. A $100 evaluation tells you where AI actually saves you money — no jargon, no hype.">
+<style>
+  :root{
+    --ink:#1a2332;
+    --ink-soft:#46526b;
+    --paper:#f7f5f0;
+    --card:#ffffff;
+    --accent:#b45f27;
+    --accent-dark:#8f4a1d;
+    --line:#e2ddd2;
+    --tier:#2c4a6e;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{font-family:Georgia,'Times New Roman',serif;color:var(--ink);background:var(--paper);line-height:1.65;}
+  h1,h2,h3,.sans{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;}
+  .wrap{max-width:1060px;margin:0 auto;padding:0 24px;}
+
+  /* header */
+  header{background:var(--paper);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10;}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:16px 0;}
+  .brand{font-family:'Segoe UI',system-ui,sans-serif;font-weight:700;letter-spacing:.04em;font-size:1.05rem;text-transform:uppercase;}
+  .brand span{color:var(--accent);}
+  nav a{color:var(--ink-soft);text-decoration:none;margin-left:22px;font-family:'Segoe UI',system-ui,sans-serif;font-size:.92rem;}
+  nav a:hover{color:var(--accent);}
+  nav a.cta{background:var(--accent);color:#fff;padding:8px 16px;border-radius:4px;font-weight:600;}
+  nav a.cta:hover{background:var(--accent-dark);color:#fff;}
+  @media(max-width:700px){nav a:not(.cta){display:none;}}
+
+  /* hero */
+  .hero{padding:84px 0 72px;}
+  .hero h1{font-size:clamp(1.9rem,4.5vw,3rem);line-height:1.15;max-width:20ch;font-weight:700;}
+  .hero h1 em{font-style:normal;color:var(--accent);}
+  .hero p.lede{font-size:1.15rem;color:var(--ink-soft);max-width:58ch;margin:22px 0 30px;}
+  .btn{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;padding:13px 26px;border-radius:4px;font-family:'Segoe UI',system-ui,sans-serif;font-weight:600;font-size:1rem;}
+  .btn:hover{background:var(--accent-dark);}
+  .btn.ghost{background:transparent;color:var(--accent);border:1.5px solid var(--accent);margin-left:12px;}
+  .btn.ghost:hover{background:var(--accent);color:#fff;}
+
+  /* strip */
+  .strip{background:var(--ink);color:#cfd6e4;padding:14px 0;font-family:'Segoe UI',system-ui,sans-serif;font-size:.95rem;text-align:center;}
+  .strip strong{color:#fff;}
+
+  section{padding:64px 0;}
+  section h2{font-size:1.7rem;margin-bottom:8px;}
+  .kicker{font-family:'Segoe UI',system-ui,sans-serif;text-transform:uppercase;letter-spacing:.12em;font-size:.78rem;color:var(--accent);font-weight:700;margin-bottom:10px;}
+  .sub{color:var(--ink-soft);max-width:62ch;margin-bottom:36px;}
+
+  /* audience */
+  .aud{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;}
+  .aud div{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:14px 12px;text-align:center;font-family:'Segoe UI',system-ui,sans-serif;font-size:.92rem;color:var(--ink-soft);}
+
+  /* tiers */
+  .tiers{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:20px;}
+  .tier{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:28px 26px;display:flex;flex-direction:column;}
+  .tier h3{font-size:1.12rem;margin-bottom:2px;}
+  .tier .price{font-family:'Segoe UI',system-ui,sans-serif;font-size:1.9rem;font-weight:700;color:var(--tier);margin:8px 0 2px;}
+  .tier .price small{font-size:.95rem;font-weight:400;color:var(--ink-soft);}
+  .tier p{color:var(--ink-soft);font-size:.98rem;margin:12px 0 18px;flex:1;}
+  .tier ul{list-style:none;margin-bottom:20px;}
+  .tier li{padding-left:22px;position:relative;font-size:.95rem;color:var(--ink-soft);margin-bottom:8px;}
+  .tier li::before{content:"→";position:absolute;left:0;color:var(--accent);}
+  .tier .btn{text-align:center;}
+  .tier.featured{border-top:4px solid var(--accent);}
+  .tag{display:inline-block;background:#f3e6da;color:var(--accent-dark);font-family:'Segoe UI',system-ui,sans-serif;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;padding:3px 10px;border-radius:99px;margin-bottom:10px;align-self:flex-start;}
+
+  /* proof */
+  .proof{background:var(--ink);color:#dfe4ee;}
+  .proof .kicker{color:#e8a26c;}
+  .proof h2{color:#fff;}
+  .proof .sub{color:#aeb8ca;}
+  .cases{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px;}
+  .case{background:#232f45;border:1px solid #34415c;border-radius:8px;padding:24px;}
+  .case h3{color:#fff;font-size:1.02rem;margin-bottom:8px;}
+  .case p{color:#aeb8ca;font-size:.94rem;}
+  .case .sig{font-family:'Segoe UI',system-ui,sans-serif;font-size:.78rem;text-transform:uppercase;letter-spacing:.09em;color:#e8a26c;margin-bottom:10px;}
+
+  /* approach */
+  .steps{counter-reset:step;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;}
+  .step{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:22px;}
+  .step::before{counter-increment:step;content:counter(step);display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:50%;background:var(--accent);color:#fff;font-family:'Segoe UI',system-ui,sans-serif;font-weight:700;margin-bottom:12px;}
+  .step h3{font-size:1rem;margin-bottom:6px;}
+  .step p{font-size:.93rem;color:var(--ink-soft);}
+
+  /* contact */
+  .contact{text-align:center;padding:80px 0;}
+  .contact h2{font-size:2rem;}
+  .contact p{max-width:52ch;margin:16px auto 30px;color:var(--ink-soft);}
+
+  footer{border-top:1px solid var(--line);padding:26px 0;font-family:'Segoe UI',system-ui,sans-serif;font-size:.85rem;color:var(--ink-soft);}
+  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+  footer a{color:var(--accent);text-decoration:none;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <div class="brand">Barron <span>Software</span> Services</div>
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#work">Track Record</a>
+      <a href="#how">How It Works</a>
+      <a class="cta" href="#contact">Get the $100 Evaluation</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <h1>AI that pays for itself — <em>in a business like yours.</em></h1>
+    <p class="lede">You've heard AI can save you time and money. Most of what you've heard is hype.
+    I'm a software developer who builds real AI systems, and for $100 I'll look at your operation and tell you —
+    in plain English — what's worth doing, what it costs, and what to skip.</p>
+    <a class="btn" href="#contact">Start with a $100 Evaluation</a>
+    <a class="btn ghost" href="#work">See What I've Built</a>
+  </div>
+</section>
+
+<div class="strip"><div class="wrap">Built for <strong>owner-operated businesses</strong> — farms, contractors &amp; trades, professional services, real estate, clinics, and retail.</div></div>
+
+<section id="services">
+  <div class="wrap">
+    <div class="kicker">Services</div>
+    <h2>Three ways to work with me</h2>
+    <p class="sub">Start small. Every engagement begins with the evaluation, so you never pay for a build-out you don't need.</p>
+    <div class="tiers">
+      <div class="tier featured">
+        <span class="tag">Start Here</span>
+        <h3>AI Opportunity Evaluation</h3>
+        <div class="price">$100</div>
+        <p>A focused look at how your business runs — the paperwork, the scheduling, the quoting, the follow-up — and where AI genuinely helps.</p>
+        <ul>
+          <li>Plain-English written summary</li>
+          <li>Top opportunities, ranked by payoff</li>
+          <li>Honest "don't bother" list</li>
+        </ul>
+        <a class="btn" href="#contact">Book an Evaluation</a>
+      </div>
+      <div class="tier">
+        <h3>AI Systems Audit</h3>
+        <div class="price">$500</div>
+        <p>A deep dive into your workflows, software, and data. You get a prioritized roadmap with realistic cost and effort estimates for each item.</p>
+        <ul>
+          <li>Workflow-by-workflow review</li>
+          <li>Prioritized implementation roadmap</li>
+          <li>Cost estimates before you commit</li>
+        </ul>
+        <a class="btn" href="#contact">Request an Audit</a>
+      </div>
+      <div class="tier">
+        <h3>Build-Out &amp; Integration</h3>
+        <div class="price">$150<small>/hr</small></div>
+        <p>I build and integrate the systems from your roadmap — automation, document handling, AI assistants trained on your business — and make sure your people can run them.</p>
+        <ul>
+          <li>Working software, not slideware</li>
+          <li>Integrates with what you already use</li>
+          <li>Training and handoff included</li>
+        </ul>
+        <a class="btn" href="#contact">Discuss a Build</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="proof" id="work">
+  <div class="wrap">
+    <div class="kicker">Track Record</div>
+    <h2>I build systems people depend on</h2>
+    <p class="sub">A sample of what's come out of my shop — from government-grade financial software to AI pipelines nobody else is building.</p>
+    <div class="cases">
+      <div class="case">
+        <div class="sig">Financial Systems</div>
+        <h3>The software a county runs its money through</h3>
+        <p>I built and maintain the financial management system an Arkansas county government uses to manage its funds — the kind of software where being wrong isn't an option.</p>
+      </div>
+      <div class="case">
+        <div class="sig">Compliance &amp; Rules</div>
+        <h3>Legislative rules management, delivered early</h3>
+        <p>A statewide rules-management system handling legislative compliance workflows — completed and delivered ahead of schedule.</p>
+      </div>
+      <div class="case">
+        <div class="sig">AI Knowledge Systems</div>
+        <h3>Turning a library into a database that answers questions</h3>
+        <p>I build AI pipelines that read piles of source documents — books, PDFs, records — and compile them into validated, searchable knowledge, with human review before anything is trusted. The same approach turns your file cabinets and job history into answers.</p>
+      </div>
+      <div class="case">
+        <div class="sig">AI Content Production</div>
+        <h3>AI-assisted publishing with editorial control</h3>
+        <p>A full manuscript-production studio where AI drafts under strict instructions and every word passes human review before it's accepted. AI does the labor; people keep the judgment.</p>
+      </div>
+      <div class="case">
+        <div class="sig">Creator Protection</div>
+        <h3>Cryptographic proof of ownership for digital work</h3>
+        <p>A SaaS platform that invisibly watermarks and cryptographically signs creative work, so creators can prove what's theirs and act when it's stolen.</p>
+      </div>
+      <div class="case">
+        <div class="sig">Interactive &amp; Games</div>
+        <h3>Multiplayer worlds and AI-driven experiences</h3>
+        <p>Networked multiplayer games and AI-powered interactive experiences on modern platforms — the kind of engineering that has to work in real time, for real users.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="how">
+  <div class="wrap">
+    <div class="kicker">How It Works</div>
+    <h2>No hype. No lock-in. Human in the loop.</h2>
+    <p class="sub">Every system I build keeps a person in control of the decisions that matter. AI handles the repetitive work; you keep the judgment.</p>
+    <div class="steps">
+      <div class="step"><h3>We talk</h3><p>A short conversation about how your business actually runs and where the time goes.</p></div>
+      <div class="step"><h3>I evaluate</h3><p>You get a written, plain-English assessment of what AI can do for you — and what it can't.</p></div>
+      <div class="step"><h3>You decide</h3><p>Take the report and run with it yourself, or have me build it. Either way, you own the plan.</p></div>
+      <div class="step"><h3>I build &amp; hand off</h3><p>If you want it built, I build it, integrate it, and train your people. You're never dependent on me.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <h2>Find out what AI is actually worth to your business.</h2>
+    <p>Message the page or send an email. Tell me what kind of business you run — I'll tell you if the $100 evaluation makes sense for you. If it doesn't, I'll say so.</p>
+    <a class="btn" href="https://www.facebook.com/BarronSoftware" target="_blank" rel="noopener">Message on Facebook</a>
+    <a class="btn ghost" href="mailto:jeff@cyberbaron.dev">Email Jeff</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>© 2026 Barron Software Services</div>
+    <div><a href="https://www.facebook.com/BarronSoftware" target="_blank" rel="noopener">Facebook</a> · <a href="mailto:jeff@cyberbaron.dev">jeff@cyberbaron.dev</a></div>
+  </div>
+</footer>
+
+</body>
+</html>
