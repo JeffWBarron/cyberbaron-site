@@ -1,0 +1,17 @@
+# Barron Software Services
+
+> AI implementation consulting and software development for owner-operated businesses (farms, contractors and trades, professional services, real estate, clinics, retail). Owner and developer: Jeff Barron. Based in Westville, Oklahoma; serves businesses within about 90 miles of Tulsa and Fort Smith.
+
+## Services and prices (USD)
+
+- AI Opportunity Evaluation: $100. Plain-English written summary, top opportunities ranked by payoff, and a don't-bother list.
+- AI Systems Audit: $500. Workflow-by-workflow review, prioritized roadmap, cost and effort estimates before you commit.
+- Build-Out and Integration: $150 per hour. Working software built from the roadmap, integrated with existing tools, training and handoff included.
+
+Every engagement starts with the evaluation.
+
+## Contact
+
+- Email: jeff@cyberbaron.dev
+- Facebook: https://www.facebook.com/BarronSoftware
+- Site: https://cyberbaron.dev/
