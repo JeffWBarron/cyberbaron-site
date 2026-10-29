@@ -28,12 +28,12 @@
   "sameAs": ["https://www.facebook.com/BarronSoftware"],
   "makesOffer": [
     {"@type": "Offer", "name": "AI Opportunity Evaluation", "price": "100", "priceCurrency": "USD",
-     "description": "Plain-English written summary of where AI helps your business, top opportunities ranked by payoff, and a don't-bother list."},
+     "description": "Plain-English written summary of where AI helps your business, top opportunities ranked by payoff, a don't-bother list, and a check of whether AI assistants recommend your business. $100 paid at booking; $125 if invoiced."},
     {"@type": "Offer", "name": "AI Systems Audit", "price": "500", "priceCurrency": "USD",
      "description": "Workflow-by-workflow review with a prioritized implementation roadmap and cost estimates before you commit."},
     {"@type": "Offer", "name": "Build-Out and Integration",
      "priceSpecification": {"@type": "UnitPriceSpecification", "price": "150", "priceCurrency": "USD", "unitText": "hour"},
-     "description": "Building and integrating the systems on your roadmap, with training and handoff included."}
+     "description": "Building and integrating the systems on your roadmap, with training and handoff included. Large projects billed in increments as milestones are completed."}
   ]
 }
 </script>
@@ -120,6 +120,7 @@
   table.prices tbody tr:nth-child(odd){background:var(--band);}
   table.prices td.svc{font-weight:600;width:28%;}
   table.prices td.amt{font-weight:600;font-size:1.1rem;}
+  table.prices .amt-note{display:block;font-weight:400;font-size:.8rem;line-height:1.45;color:var(--ink-soft);margin-top:4px;}
   table.prices td ul{list-style:none;}
   table.prices td li::before{content:"- ";}
   .foot-note{padding:16px 16px 0;border-top:1.5px dashed var(--rule);margin-top:6px;font-size:.88rem;color:var(--ink-soft);}
@@ -205,8 +206,8 @@
           <tbody>
             <tr class="print">
               <td class="svc">AI Opportunity Evaluation</td>
-              <td><ul><li>Plain-English written summary of how your business runs and where AI helps</li><li>Top opportunities, ranked by payoff</li><li>An honest don't-bother list</li></ul></td>
-              <td class="amt">$100</td>
+              <td><ul><li>Plain-English written summary of how your business runs and where AI helps</li><li>Top opportunities, ranked by payoff</li><li>An honest don't-bother list</li><li>Check of whether AI assistants recommend your business</li></ul></td>
+              <td class="amt">$100<span class="amt-note">paid at booking<br>$125 if invoiced</span></td>
             </tr>
             <tr class="print">
               <td class="svc">AI Systems Audit</td>
@@ -220,7 +221,7 @@
             </tr>
           </tbody>
         </table>
-        <p class="foot-note print">Every engagement starts with the evaluation, so you never pay for a build you don't need.</p>
+        <p class="foot-note print">Every engagement starts with the evaluation, so you never pay for a build you don't need. Large projects are billed in increments as each milestone is completed.</p>
       </div>
     </div>
 
@@ -273,7 +274,10 @@
       <p>Tell me what kind of business you run. I'll tell you whether the $100 evaluation makes sense for you, and if it doesn't, I'll say so.</p>
       <dl class="facts">
         <dt>Based in</dt><dd>Westville, Oklahoma</dd>
-        <dt>Service area</dt><dd>Businesses within about 90 miles of Tulsa and Fort Smith</dd>
+        <dt>How I work</dt><dd>Remote, with on-site evaluations and audits</dd>
+        <dt>On-site area</dt><dd>Within about 90 miles of Tulsa and Fort Smith</dd>
+        <dt>Scheduling</dt><dd>Discovery calls are booked quickly, usually within days</dd>
+        <dt>Billing</dt><dd>Evaluation $100 paid at booking, $125 if invoiced. Large projects billed by milestone.</dd>
         <dt>Email</dt><dd><a href="mailto:jeff@cyberbaron.dev">jeff@cyberbaron.dev</a></dd>
         <dt>Facebook</dt><dd><a href="https://www.facebook.com/BarronSoftware" rel="noopener">Barron Software Services</a></dd>
       </dl>

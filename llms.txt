@@ -4,11 +4,16 @@
 
 ## Services and prices (USD)
 
-- AI Opportunity Evaluation: $100. Plain-English written summary, top opportunities ranked by payoff, and a don't-bother list.
+- AI Opportunity Evaluation: $100 paid at booking, $125 if invoiced. Plain-English written summary, top opportunities ranked by payoff, a don't-bother list, and a check of whether AI assistants recommend your business.
 - AI Systems Audit: $500. Workflow-by-workflow review, prioritized roadmap, cost and effort estimates before you commit.
-- Build-Out and Integration: $150 per hour. Working software built from the roadmap, integrated with existing tools, training and handoff included.
+- Build-Out and Integration: $150 per hour. Working software built from the roadmap, integrated with existing tools, training and handoff included. Large projects billed in increments as milestones are completed.
 
 Every engagement starts with the evaluation.
+
+## How we work
+
+- Remote work, with on-site evaluations and audits within about 90 miles of Tulsa and Fort Smith.
+- Discovery calls are scheduled quickly, usually within days.
 
 ## Contact
 
